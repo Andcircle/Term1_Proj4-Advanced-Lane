@@ -25,7 +25,7 @@ The goals / steps of this project are the following:
 [image4]: ./test_images/perspective.png "Unwarp"
 [image5]: ./test_images/test5.jpg "Original Pic"
 [image6]: ./test_images/test5_line.png "Detect Lane Lines"
-[image7]: ./test_images/final.jpg "Final Output"
+[image7]: ./test_images/final.JPG "Final Output"
 [image7]: ./test_images/Equition.jpg "Curve Radius Calculation"
 [video1]: ./videos/project_video_output.mp4 "Video"
 
