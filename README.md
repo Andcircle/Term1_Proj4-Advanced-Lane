@@ -4,6 +4,9 @@ In this project, the goal is to write a software pipeline to identify the lane b
 Content:
 
 1.writeup
+
 2.code (or a Jupyter notebook)
+
 3.example output images
+
 4.output video
