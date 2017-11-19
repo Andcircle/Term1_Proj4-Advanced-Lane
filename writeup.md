@@ -25,7 +25,7 @@ The goals / steps of this project are the following:
 [image4]: ./test_images/perspective.png "Unwarp"
 [image5]: ./test_images/test5.jpg "Original Pic"
 [image6]: ./test_images/test5_line.png "Detect Lane Lines"
-[image7]: ./test_images/final.JPG "Final Output"
+[image7]: ./test_images/prefinal.png "Final Output"
 [image7]: ./test_images/Equition.jpg "Curve Radius Calculation"
 [video1]: ./videos/project_video_output.mp4 "Video"
 
@@ -100,7 +100,7 @@ Finally, the fitted 2nd order polynomial line should be transfer back from bird 
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](/videos/project_video.mp4)
+Here's a [link to my video result][video1](/videos/project_video.mp4)
 
 ---
 
@@ -108,4 +108,6 @@ Here's a [link to my video result](/videos/project_video.mp4)
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+1. In order to have more stable results especially the curve radius calcuation, robust fitted lines of previous frame should be stored, then averaged to get more smooth and reasonable result.
+
+2. Combined threshold should be fine tuned to get more useful data. The gradient should be used to improve output in certain condition.
