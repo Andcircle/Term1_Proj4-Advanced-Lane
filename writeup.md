@@ -26,6 +26,7 @@ The goals / steps of this project are the following:
 [image5]: ./test_images/test5.jpg "Original Pic"
 [image6]: ./test_images/test5_line.png "Detect Lane Lines"
 [image7]: ./test_images/final.jpg "Final Output"
+[image7]: ./test_images/Equition.jpg "Curve Radius Calculation"
 [video1]: ./videos/project_video_output.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
@@ -80,16 +81,18 @@ Then I curvefit the line points with a 2nd order polynomial. In the real applica
 ![alt text][image6]
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
+![alt text][image8]
+The curve radius is calculated using the above equation, pls note the pixl data should be change back to real distance data first.
+Then I did curve fitting again, and then calculate the curve radius based on new fitted 2nd order polynomial.
 
-I did this in lines # through # in my code in `my_other_file.py`
+The code for step 4 and 5 are located in lines.py
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
+Finally, the fitted 2nd order polynomial line should be transfer back from bird view to normal view. Then they can be plotted on top of the original picture as following.
 
-![alt text][image6]
+![alt text][image7]
 
-![alt text][image6]
 
 ---
 
