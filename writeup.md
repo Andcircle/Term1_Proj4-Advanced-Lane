@@ -65,7 +65,9 @@ I verified that my perspective transform was working as expected by drawing the 
 
 #### 3. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
-I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
+Only color thresholds are used in this project, RGB R-channel, HLS L-channel and S-channel are combined together to get useful info, this part is in 'color.py'.
+
+Here are the validation output for this step.
 
 ![alt text][image3]
 
