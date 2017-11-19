@@ -1,7 +1,5 @@
 ## Writeup Template
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
 ---
 
 **Advanced Lane Finding Project**
@@ -31,7 +29,6 @@ The goals / steps of this project are the following:
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
 
-You're reading it!
 
 ### Camera Calibration
 
@@ -46,10 +43,10 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 #### 1. Distortion-corrected image.
 
-To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
+To demonstrate this step, the following images are original test image and undistorted one accordingly:
 ![alt text][image2]
 
-#### 2. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
+#### 2. Perform a perspective transform in pipeline.
 
 The code for my perspective transform includes a function called `unwarp()`, which is in the file `unwarp.py` The `unwarp()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  The `src` and destination `dst` is chosen mannually using the pic straight_line1.png
 
@@ -64,7 +61,7 @@ I verified that my perspective transform was working as expected by drawing the 
 
 ![alt text][image4]
 
-#### 3. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
+#### 3. Combined threshold filter.
 
 Only color thresholds are used in this project, RGB R-channel, HLS L-channel and S-channel are combined together to get useful info, this part is in 'color.py'.
 
@@ -72,7 +69,7 @@ Here are the validation output for this step.
 
 ![alt text][image3]
 
-#### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
+#### 4. Lane lines detection and 2nd order polynomial curve fitting.
 
 First, use histgram to find line start point, then use sliding window to locate the most possible line points.
 Then I curvefit the line points with a 2nd order polynomial. In the real application in video, if previous frame have good detection, next frame only need to find line points around fitting lines of previous frame.
@@ -80,10 +77,12 @@ Then I curvefit the line points with a 2nd order polynomial. In the real applica
 ![alt text][image5]
 ![alt text][image6]
 
-#### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
+#### 5. Curve radius and the position of the vehicle with respect to center.
 ![alt text][image8]
 The curve radius is calculated using the above equation, pls note the pixl data should be change back to real distance data first.
 Then I did curve fitting again, and then calculate the curve radius based on new fitted 2nd order polynomial.
+
+For the relative position, I assuming the center of the image is vehicle position, the road position is (right line + left line)/2.
 
 The code for step 4 and 5 are located in lines.py
 
